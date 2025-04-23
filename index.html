@@ -1,82 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Team Flip Cards</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Hierarchy Flip Cards</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background: #f4f4f9;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 40px;
+      padding: 20px;
     }
-    .card {
-      width: 200px;
-      height: 260px;
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
       margin: 15px;
       perspective: 1000px;
-      cursor: pointer;
     }
-    .card-inner {
+    .flip-card-inner {
       position: relative;
       width: 100%;
       height: 100%;
+      text-align: center;
       transition: transform 0.6s;
       transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
-    .card.flipped .card-inner {
+    .flip-card:hover .flip-card-inner {
       transform: rotateY(180deg);
     }
-    .card-front, .card-back {
+    .flip-card-front, .flip-card-back {
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       padding: 20px;
     }
-    .card-back {
-      background-color: #4a90e2;
+    .flip-card-front {
+      background-color: #ffffff;
+      color: black;
+    }
+    .flip-card-back {
+      background-color: #2a9d8f;
       color: white;
       transform: rotateY(180deg);
     }
-    .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background-color: #ccc;
-      margin-bottom: 10px;
+    h3 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="card" onclick="this.classList.toggle('flipped')">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="avatar"></div>
-        <h3>Fatima Khan</h3>
-        <p>Senior Analyst</p>
-      </div>
-      <div class="card-back">
-        <h4>Fatima Khan</h4>
-        <p>Email: fatima.khan@example.com</p>
-        <p>Location: Mumbai</p>
-        <p>Team: AP Transformation</p>
-      </div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h3>Luke Freeman</h3>
+      <p><strong>Role:</strong> VP, Finance Transformation</p>
+      <p><strong>Location:</strong> Norwalk</p>
+    </div>
+    <div class="flip-card-back">
+      <p><strong>Reports To:</strong> N/A</p>
+      <p><strong>Responsibilities:</strong> N/A</p>
     </div>
   </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h3>Alicia Machado</h3>
+      <p><strong>Role:</strong> Senior Director, Financial Integrations</p>
+      <p><strong>Location:</strong> Norwalk</p>
+    </div>
+    <div class="flip-card-back">
+      <p><strong>Reports To:</strong> Luke Freeman</p>
+      <p><strong>Responsibilities:</strong> Oversees Oracle functional upgrade testing, PCLN global taxonomy input, and investigates AI</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h3>Evan Warren</h3>
+      <p><strong>Role:</strong> Director, Finance Operations</p>
+      <p><strong>Location:</strong> Norwalk</p>
+    </div>
+    <div class="flip-card-back">
+      <p><strong>Reports To:</strong> Luke Freeman</p>
+      <p><strong>Responsibilities:</strong> Owns transactional end-to-end processing, onboarding of new supply, testing of changes with Financial Impact</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h3>Monika Mittal</h3>
+      <p><strong>Role:</strong> Senior Director, Revenue Operations</p>
+      <p><strong>Location:</strong> Norwalk</p>
+    </div>
+    <div class="flip-card-back">
+      <p><strong>Reports To:</strong> Luke Freeman</p>
+      <p><strong>Responsibilities:</strong> N/A</p>
+    </div>
+  </div>
+</div>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <h3>Jesse Adams</h3>
+      <p><strong>Role:</strong> Senior Manager, Accounts Payable</p>
+      <p><strong>Location:</strong> Norwalk</p>
+    </div>
+    <div class="flip-card-back">
+      <p><strong>Reports To:</strong> Luke Freeman</p>
+      <p><strong>Responsibilities:</strong> N/A</p>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
